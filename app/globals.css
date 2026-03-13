@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand + semantic colors (RGB) */
+  --brand-primary: 37 99 235; /* blue-600 */
+  --brand-primary-soft: 219 234 254; /* blue-100 */
+  --brand-accent: 124 92 255; /* playful purple */
+  --brand-success: 34 197 94; /* mint/emerald-500 */
+  --brand-danger: 239 68 68; /* red-500 */
+  --brand-warning: 249 115 22; /* orange-500 */
+
+  /* Surfaces & text */
+  --surface: 248 250 252; /* slate-50 */
+  --surface-2: 245 247 251; /* soft grid background */
+  --text: 15 23 42; /* slate-900 */
+  --muted: 100 116 139; /* slate-500/600 */
+  --border: 226 232 240; /* slate-200 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: 15 23 42;
+    --surface-2: 15 23 42;
+    --text: 248 250 252;
+    --muted: 148 163 184;
+    --border: 51 65 85;
+  }
+}
+
+body {
+  color: rgb(var(--text));
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 55%),
+    radial-gradient(circle at top right, rgba(124, 92, 255, 0.18), transparent 55%),
+    linear-gradient(180deg, rgb(248 250 252), rgb(255 255 255));
+}
+
+@layer utilities {
+  .app-surface {
+    background-color: rgb(var(--surface));
+  }
+  .app-surface-2 {
+    background-color: rgb(var(--surface-2));
+  }
+  .app-border {
+    border-color: rgb(var(--border));
+  }
+  .app-muted {
+    color: rgb(var(--muted));
+  }
+  .app-pill {
+    border-radius: 9999px;
+    padding-inline: 0.75rem;
+    padding-block: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+}
