@@ -195,16 +195,19 @@ export default function TeacherDashboardPage() {
             label="Today’s classes"
             value={loading ? '…' : String(todayClassCount)}
             hint="Based on your assigned classes"
+            tone="sky"
           />
           <StatCard
             label="Students"
             value={loading ? '…' : String(totalStudents)}
             hint="In your classes"
+            tone="mint"
           />
           <StatCard
             label="Upcoming homework"
             value={loading || upcomingHomeworkCount === null ? '…' : String(upcomingHomeworkCount)}
             hint="Due from today onward"
+            tone="lavender"
           />
         </div>
 
@@ -219,6 +222,7 @@ export default function TeacherDashboardPage() {
             title="Today’s timetable"
             subtitle="Calm routine blocks for your classes. Therapy slots are highlighted."
             actions={<SecondaryButton href="/teacher/timetable">Open</SecondaryButton>}
+            tone="sky"
           >
             {loading ? (
               <p className="text-sm app-muted">Loading timetable…</p>
@@ -264,6 +268,7 @@ export default function TeacherDashboardPage() {
           <Card
             title="Today’s attendance"
             subtitle="Quick snapshot by class (present / late / therapy / absent)."
+            tone="mint"
           >
             {loading ? (
               <p className="text-sm app-muted">Loading attendance…</p>
@@ -291,7 +296,7 @@ export default function TeacherDashboardPage() {
             )}
           </Card>
 
-          <Card title="Your classes" subtitle="Roster counts for planning inclusive activities.">
+          <Card title="Your classes" subtitle="Roster counts for planning inclusive activities." tone="lavender">
             {loading ? (
               <p className="text-sm app-muted">Loading classes…</p>
             ) : classes.length === 0 ? (

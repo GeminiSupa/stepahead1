@@ -280,6 +280,7 @@ export default function ParentDashboardPage() {
                     Open
                   </Link>
                 }
+                tone="sky"
               >
                 {children.length === 0 ? (
                   <p className="text-sm app-muted">Ask admin to link your account to your child.</p>
@@ -330,6 +331,7 @@ export default function ParentDashboardPage() {
                     Open
                   </Link>
                 }
+                tone="mint"
               >
                 <p className="text-sm app-muted">
                   Fee records are added by the school admin. You’ll see current balance and status
@@ -348,6 +350,7 @@ export default function ParentDashboardPage() {
                     Open
                   </Link>
                 }
+                tone="lavender"
               >
                 <p className="text-sm app-muted">
                   When approved, leave days are marked in attendance as Absent (Approved leave).

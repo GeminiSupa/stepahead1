@@ -176,16 +176,19 @@ export default function AdminDashboardPage() {
             label="Total students"
             value={loading || totalStudents === null ? '…' : String(totalStudents)}
             hint="From Supabase students table"
+            tone="sky"
           />
           <StatCard
             label="Neurodiverse"
             value={loading ? '…' : neurodiversePctLabel}
             hint="% with any diagnosis set"
+            tone="lavender"
           />
           <StatCard
             label="Today attendance"
             value={loading ? '…' : attendanceSummaryLabel}
             hint="Present / Therapy / Absent"
+            tone="mint"
           />
         </div>
 
@@ -193,6 +196,7 @@ export default function AdminDashboardPage() {
           <Card
             title="Students & classes"
             subtitle="Mixed-ability grouping and inclusive classroom operations."
+            tone="sky"
           >
             <div className="flex flex-wrap gap-2 text-xs">
               <span className="rounded-full bg-indigo-50 px-3 py-1 text-indigo-700">
@@ -209,6 +213,7 @@ export default function AdminDashboardPage() {
           <Card
             title="Inclusive insights"
             subtitle="Live numbers from IEP, therapy, and portfolio data."
+            tone="lavender"
           >
             <ul className="space-y-2 text-sm app-muted">
               <li>

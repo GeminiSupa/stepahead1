@@ -202,16 +202,19 @@ export default function TherapistDashboardPage() {
             label="Today’s sessions"
             value={loading ? '…' : String(todaySessions.length)}
             hint="OT / PT / Speech / ABA"
+            tone="lavender"
           />
           <StatCard
             label="Active IEP goals"
             value={loading ? '…' : String(activeGoals.length)}
             hint="Across your students"
+            tone="mint"
           />
           <StatCard
             label="Behavior logs"
             value={loading ? '…' : String(behaviorLogs.length)}
             hint="Last 7 days"
+            tone="coral"
           />
         </div>
 
@@ -225,6 +228,7 @@ export default function TherapistDashboardPage() {
           <Card
             title="IEP progress overview"
             subtitle="Average progress by area across active goals."
+            tone="lavender"
           >
             {loading ? (
               <p className="text-sm app-muted">Loading IEP data…</p>
@@ -264,6 +268,7 @@ export default function TherapistDashboardPage() {
           <Card
             title="Behavior insights"
             subtitle="Frequency grouped by behavior type (last 7 days)."
+            tone="coral"
           >
             {loading ? (
               <p className="text-sm app-muted">Loading behavior data…</p>

@@ -5,14 +5,23 @@ export function Card({
   subtitle,
   children,
   actions,
+  tone = 'plain',
 }: {
   title?: string
   subtitle?: string
   actions?: React.ReactNode
+  tone?: 'plain' | 'sky' | 'lavender' | 'mint' | 'coral'
   children: React.ReactNode
 }) {
+  const toneClasses: Record<NonNullable<typeof tone>, string> = {
+    plain: 'bg-white/95',
+    sky: 'bg-sky-50',
+    lavender: 'bg-indigo-50',
+    mint: 'bg-emerald-50',
+    coral: 'bg-rose-50',
+  }
   return (
-    <section className="rounded-3xl border app-border bg-white/95 p-5 shadow-sm">
+    <section className={`rounded-3xl border app-border p-5 shadow-sm ${toneClasses[tone]}`}>
       {(title || actions) && (
         <div className="mb-4 flex items-start justify-between gap-4">
           <div>
@@ -31,13 +40,22 @@ export function StatCard({
   label,
   value,
   hint,
+  tone = 'plain',
 }: {
   label: string
   value: string
   hint?: string
+  tone?: 'plain' | 'sky' | 'lavender' | 'mint' | 'coral'
 }) {
+  const toneClasses: Record<NonNullable<typeof tone>, string> = {
+    plain: 'bg-white/95',
+    sky: 'bg-sky-50',
+    lavender: 'bg-indigo-50',
+    mint: 'bg-emerald-50',
+    coral: 'bg-rose-50',
+  }
   return (
-    <div className="rounded-3xl border app-border bg-white/95 p-4 shadow-sm">
+    <div className={`rounded-3xl border app-border p-4 shadow-sm ${toneClasses[tone]}`}>
       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</p>
       <p className="mt-2 text-2xl font-semibold text-slate-900">{value}</p>
       {hint ? <p className="mt-1 text-xs app-muted">{hint}</p> : null}
