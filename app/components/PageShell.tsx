@@ -126,7 +126,10 @@ export function PageShell({ title, subtitle, navItems, children, variant = 'app'
     <div className="min-h-screen">
       <header className="sticky top-0 z-20 border-b app-border bg-white/80 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-          <Link href="/" className="flex items-center gap-3">
+          <Link
+            href={variant === 'app' && roleHomeHref ? roleHomeHref : '/'}
+            className="flex items-center gap-3"
+          >
             <span className="relative h-9 w-9 overflow-hidden rounded-xl border app-border bg-white">
               <Image src={BRAND.logoUrl} alt={BRAND.name} fill sizes="36px" />
             </span>
@@ -261,14 +264,27 @@ export function PageShell({ title, subtitle, navItems, children, variant = 'app'
       {canSeeNav ? (
         <nav className="fixed bottom-0 left-0 right-0 z-30 border-t app-border bg-white/90 backdrop-blur sm:hidden">
           <div className="mx-auto grid max-w-5xl grid-cols-2 gap-2 px-2 py-2">
-            <Link
-              href="/"
-              className={`flex items-center justify-center rounded-2xl px-2 py-2 text-xs font-semibold ${
-                pathname === '/' ? 'bg-sky-100 text-sky-900' : 'text-slate-700 hover:bg-slate-50'
-              }`}
-            >
-              Home
-            </Link>
+            {roleHomeHref ? (
+              <Link
+                href={roleHomeHref}
+                className={`flex items-center justify-center rounded-2xl px-2 py-2 text-xs font-semibold ${
+                  activeBottomHref === roleHomeHref
+                    ? 'bg-sky-100 text-sky-900'
+                    : 'text-slate-700 hover:bg-slate-50'
+                }`}
+              >
+                Home
+              </Link>
+            ) : (
+              <Link
+                href="/"
+                className={`flex items-center justify-center rounded-2xl px-2 py-2 text-xs font-semibold ${
+                  pathname === '/' ? 'bg-sky-100 text-sky-900' : 'text-slate-700 hover:bg-slate-50'
+                }`}
+              >
+                Home
+              </Link>
+            )}
 
             {roleHomeHref ? (
               <Link
