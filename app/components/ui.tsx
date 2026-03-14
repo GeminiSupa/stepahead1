@@ -41,11 +41,13 @@ export function StatCard({
   value,
   hint,
   tone = 'plain',
+  href,
 }: {
   label: string
   value: string
   hint?: string
   tone?: 'plain' | 'sky' | 'lavender' | 'mint' | 'coral'
+  href?: string
 }) {
   const toneClasses: Record<NonNullable<typeof tone>, string> = {
     plain: 'bg-white/95',
@@ -54,11 +56,28 @@ export function StatCard({
     mint: 'bg-emerald-50',
     coral: 'bg-rose-50',
   }
-  return (
-    <div className={`rounded-3xl border app-border p-4 shadow-sm ${toneClasses[tone]}`}>
+  const content = (
+    <>
       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</p>
       <p className="mt-2 text-2xl font-semibold text-slate-900">{value}</p>
       {hint ? <p className="mt-1 text-xs app-muted">{hint}</p> : null}
+    </>
+  )
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className={`rounded-3xl border app-border p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${toneClasses[tone]}`}
+      >
+        {content}
+      </Link>
+    )
+  }
+
+  return (
+    <div className={`rounded-3xl border app-border p-4 shadow-sm ${toneClasses[tone]}`}>
+      {content}
     </div>
   )
 }

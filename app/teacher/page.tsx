@@ -196,12 +196,14 @@ export default function TeacherDashboardPage() {
             value={loading ? '…' : String(todayClassCount)}
             hint="Based on your assigned classes"
             tone="sky"
+            href="/teacher"
           />
           <StatCard
             label="Students"
             value={loading ? '…' : String(totalStudents)}
             hint="In your classes"
             tone="mint"
+            href="/teacher"
           />
           <StatCard
             label="Upcoming homework"

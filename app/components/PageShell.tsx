@@ -264,44 +264,27 @@ export function PageShell({ title, subtitle, navItems, children, variant = 'app'
       {canSeeNav ? (
         <nav className="fixed bottom-0 left-0 right-0 z-30 border-t app-border bg-white/90 backdrop-blur sm:hidden">
           <div className="mx-auto grid max-w-5xl grid-cols-2 gap-2 px-2 py-2">
-            {roleHomeHref ? (
-              <Link
-                href={roleHomeHref}
-                className={`flex items-center justify-center rounded-2xl px-2 py-2 text-xs font-semibold ${
-                  activeBottomHref === roleHomeHref
+            <Link
+              href={roleHomeHref ?? '/'}
+              className={`flex items-center justify-center rounded-2xl px-2 py-2 text-xs font-semibold ${
+                roleHomeHref && activeBottomHref === roleHomeHref
+                  ? 'bg-sky-100 text-sky-900'
+                  : !roleHomeHref && pathname === '/'
                     ? 'bg-sky-100 text-sky-900'
                     : 'text-slate-700 hover:bg-slate-50'
-                }`}
-              >
-                Home
-              </Link>
-            ) : (
-              <Link
-                href="/"
-                className={`flex items-center justify-center rounded-2xl px-2 py-2 text-xs font-semibold ${
-                  pathname === '/' ? 'bg-sky-100 text-sky-900' : 'text-slate-700 hover:bg-slate-50'
-                }`}
-              >
-                Home
-              </Link>
-            )}
+              }`}
+            >
+              Dashboard
+            </Link>
 
-            {roleHomeHref ? (
-              <Link
-                href={roleHomeHref}
-                className={`flex items-center justify-center rounded-2xl px-2 py-2 text-xs font-semibold ${
-                  activeBottomHref === roleHomeHref
-                    ? 'bg-sky-100 text-sky-900'
-                    : 'text-slate-700 hover:bg-slate-50'
-                }`}
-              >
-                Dashboard
-              </Link>
-            ) : (
-              <span className="flex items-center justify-center rounded-2xl px-2 py-2 text-xs font-semibold text-slate-400">
-                Dashboard
-              </span>
-            )}
+            <Link
+              href="/profile"
+              className={`flex items-center justify-center rounded-2xl px-2 py-2 text-xs font-semibold ${
+                pathname === '/profile' ? 'bg-sky-100 text-sky-900' : 'text-slate-700 hover:bg-slate-50'
+              }`}
+            >
+              Profile
+            </Link>
           </div>
         </nav>
       ) : null}

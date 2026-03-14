@@ -177,18 +177,21 @@ export default function AdminDashboardPage() {
             value={loading || totalStudents === null ? '…' : String(totalStudents)}
             hint="From Supabase students table"
             tone="sky"
+            href="/admin/students"
           />
           <StatCard
             label="Neurodiverse"
             value={loading ? '…' : neurodiversePctLabel}
             hint="% with any diagnosis set"
             tone="lavender"
+            href="/admin/students"
           />
           <StatCard
             label="Today attendance"
             value={loading ? '…' : attendanceSummaryLabel}
             hint="Present / Therapy / Absent"
             tone="mint"
+            href="/admin/leave"
           />
         </div>
 

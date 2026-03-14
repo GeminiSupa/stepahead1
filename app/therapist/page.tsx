@@ -203,18 +203,21 @@ export default function TherapistDashboardPage() {
             value={loading ? '…' : String(todaySessions.length)}
             hint="OT / PT / Speech / ABA"
             tone="lavender"
+            href="/therapist/work"
           />
           <StatCard
             label="Active IEP goals"
             value={loading ? '…' : String(activeGoals.length)}
             hint="Across your students"
             tone="mint"
+            href="/therapist/work"
           />
           <StatCard
             label="Behavior logs"
             value={loading ? '…' : String(behaviorLogs.length)}
             hint="Last 7 days"
             tone="coral"
+            href="/therapist/work"
           />
         </div>
 
