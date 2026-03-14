@@ -96,7 +96,7 @@ export default function LoginPage() {
               id="email"
               type="email"
               autoComplete="email"
-              className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm outline-none ring-sky-100 focus:border-sky-600 focus:ring-2"
+              className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none ring-sky-100 focus:border-sky-600 focus:ring-2"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -112,7 +112,7 @@ export default function LoginPage() {
                 id="password"
                 type={showPassword ? 'text' : 'password'}
                 autoComplete="current-password"
-                className="w-full rounded-2xl border border-slate-300 px-4 py-3 text-sm outline-none ring-sky-100 focus:border-sky-600 focus:ring-2"
+                className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none ring-sky-100 focus:border-sky-600 focus:ring-2"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
